@@ -10,7 +10,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
@@ -22,7 +21,14 @@ const Header = () => {
     <>
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
-          <a href="#" className="logo" onClick={closeMenu}>F40</a>
+          {/* Logo image */}
+          <a href="#" className="logo" onClick={closeMenu} aria-label="F40 — Home">
+            <img
+              src="/assets/logo-f40.jpeg"
+              alt="F40 Automotive"
+              className="logo-img"
+            />
+          </a>
 
           {/* Desktop Nav */}
           <nav className="nav-links">
@@ -42,13 +48,11 @@ const Header = () => {
             aria-expanded={mobileOpen}
           >
             {mobileOpen ? (
-              /* X icon */
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             ) : (
-              /* Hamburger icon */
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <line x1="3" y1="8" x2="21" y2="8" />
                 <line x1="3" y1="16" x2="21" y2="16" />
@@ -60,6 +64,11 @@ const Header = () => {
 
       {/* Mobile Overlay Navigation */}
       <nav className={`mobile-nav-overlay ${mobileOpen ? 'open' : ''}`} aria-hidden={!mobileOpen}>
+        <img
+          src="/assets/logo-f40.jpeg"
+          alt="F40 Automotive"
+          className="mobile-nav-logo"
+        />
         <a href="#services" className="mobile-nav-link" onClick={closeMenu}>Services</a>
         <a href="#work" className="mobile-nav-link" onClick={closeMenu}>Our Work</a>
         <a href="#about" className="mobile-nav-link" onClick={closeMenu}>About</a>

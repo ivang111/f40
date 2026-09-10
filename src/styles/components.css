@@ -35,13 +35,33 @@
 
 /* Logo */
 .logo {
-  font-family: var(--font-secondary);
-  font-size: 1.5rem;
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-text) !important;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
   z-index: 1001;
+}
+
+.logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.mobile-nav-logo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 /* Desktop nav */

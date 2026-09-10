@@ -7,7 +7,11 @@ const Footer = () => (
       <div className="footer-grid">
         {/* Brand */}
         <div className="footer-brand">
-          <span className="footer-logo">F40</span>
+          <img
+            src="/assets/logo-f40.jpeg"
+            alt="F40 Automotive"
+            className="footer-logo-img"
+          />
           <p>Premium automotive appearance &amp; protection.<br />Deltona, Florida.</p>
         </div>
 
